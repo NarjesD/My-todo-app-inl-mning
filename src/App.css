@@ -1,0 +1,303 @@
+@import url("https://fonts.googlepis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+body {
+  background-image: linear-gradient(
+    to right,
+    rgb(211, 197, 189),
+    rgb(96, 90, 80)
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+#root {
+  max-width: 320px;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px); /* Suddig effekt */
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.206);
+}
+
+.todo-container {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 25px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 900;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+h4 {
+  max-width: 350px;
+  font-weight: 500;
+  color: #322e28ee;
+  font-size: 14px;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #6e5f52;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  padding: 0.6rem;
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  width: 210px;
+  padding: 10px 10px;
+  border: 2px solid #ede9e4;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+input[type="text"]:focus {
+  border-color: #ac9e97;
+}
+input[type="text"]::placeholder {
+  color: rgba(56, 54, 53, 0.44); /* Ändra till önskad färg */
+  opacity: 1; /* Säkerställer att färgen syns tydligt */
+}
+input[type="checkbox"] {
+  padding: 8px;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid white; /* Vit ram */
+  border-radius: 4px;
+  background-color: #ffffff3a; /* Blå bakgrund */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"]:checked {
+  padding: 9px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(46, 134, 250, 0.61);
+  backdrop-filter: blur(20px); /* Suddig effekt */
+}
+
+input[type="checkbox"]::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  display: none;
+}
+
+input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+button {
+  padding: 7.5px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px); /* Suddig effekt */
+}
+
+button:hover {
+  background-color: #9f6e69;
+  color: #ffffff;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 12px;
+  margin: 14px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.todo-item:hover {
+  transform: scale(1.02);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px); /* Suddig effekt */
+  color: white;
+  padding: 0px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgb(255, 255, 255);
+}
+
+@media (min-width: 768px) {
+  * {
+    font-size: 16px;
+  }
+  body {
+    padding: 2rem;
+    background-image: linear-gradient(
+      to right,
+      rgba(71, 55, 45, 0.822),
+      rgb(227, 221, 210)
+    );
+  }
+
+  #root {
+    max-width: 600px;
+  }
+
+  nav {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .todo-container {
+    padding: 25px;
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+  h4 {
+    max-width: 600px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #38332d;
+  }
+  h3 {
+    font-size: 17px;
+  }
+  .input-container {
+    flex-direction: row;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    font-size: 16px;
+    width: 400px;
+  }
+
+  button {
+    padding: 9px 18px;
+    width: auto;
+    font-size: 16px;
+  }
+
+  .todo-item {
+    padding: 12px;
+  }
+  .delete-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 1px;
+  }
+}
