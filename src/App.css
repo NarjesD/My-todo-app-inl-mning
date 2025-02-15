@@ -235,8 +235,8 @@ button:hover {
     padding: 2rem;
     background-image: linear-gradient(
       to right,
-      rgba(71, 55, 45, 0.822),
-      rgb(227, 221, 210)
+      rgb(96, 90, 80),
+      rgb(211, 197, 189)
     );
   }
 
