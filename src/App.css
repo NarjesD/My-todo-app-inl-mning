@@ -197,6 +197,7 @@ button:hover {
 .completed {
   text-decoration: line-through;
   color: #ffffff;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
 }
 
 .edit-btn {
